@@ -1,0 +1,20 @@
+[project]
+name = "{{ cookiecutter.project_slug }}"
+version = "0.0.1"
+description = "{{ cookiecutter.project_description }}"
+requires-python = "=={{ cookiecutter.python_version }}.*"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+{%- if cookiecutter.use_pre_commit == 'y' %}
+    "pre-commit",
+{%- endif %}
+    "ruff",
+{%- if cookiecutter.use_type_checking == 'y' %}
+    "ty",
+{%- endif %}
+]

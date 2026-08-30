@@ -1,0 +1,61 @@
+line-length = 100
+target-version = "py{{ cookiecutter.python_version | replace('.', '') }}"
+
+extend-exclude = [
+    "**/.venv",
+    "**/__pycache__",
+    "**/.ruff_cache",
+    "**/.pytest_cache",
+    "**/.ty_cache",
+    "**/.ipynb_checkpoints",
+]
+
+[lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "B",
+    "C4",
+    "SIM",
+    "UP",
+    "RUF",
+    "PTH",
+    "PERF",
+    "N",
+    "ARG",
+    "TID",
+    "LOG",
+    "ISC",
+    "PIE",
+    "RET",
+    "NPY",
+    "PD",
+]
+ignore = ["E501", "ISC001", "RET504", "PERF203", "PD011"]
+
+[lint.per-file-ignores]
+"*.ipynb" = ["E402", "B018"]
+"__init__.py" = ["F401"]
+"conftest.py" = ["ARG"]
+"tests/**/*.py" = ["ARG"]
+
+[lint.pep8-naming]
+extend-ignore-names = ["X", "X_*", "*_X", "Xs"]
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "parents"
+
+[lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+order-by-type = true
+split-on-trailing-comma = true
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+docstring-code-format = true
+docstring-code-line-length = "dynamic"

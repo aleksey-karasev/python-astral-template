@@ -1,0 +1,23 @@
+[environment]
+python-version = "{{ cookiecutter.python_version }}"
+
+[terminal]
+error-on-warning = false
+
+[rules]
+blanket-ignore-comment = "warn"
+division-by-zero = "warn"
+invalid-argument-type = "warn"
+invalid-assignment = "warn"
+invalid-return-type = "warn"
+no-matching-overload = "ignore"
+not-iterable = "warn"
+not-subscriptable = "warn"
+possibly-missing-attribute = "warn"
+possibly-missing-import = "warn"
+possibly-unresolved-reference = "warn"
+too-many-positional-arguments = "warn"
+unknown-argument = "ignore"
+unresolved-attribute = "warn"
+unresolved-import = "warn"
+unsupported-operator = "warn"
